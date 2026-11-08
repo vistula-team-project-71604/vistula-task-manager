@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Team Contribution</title>
+    <link rel="stylesheet" href="style.css">
+    <style>
+        .contribution-container {
+            max-width: 650px;
+            margin: 60px auto;
+        }
+
+        .contribution-card {
+            background: #151821;
+            border: 1px solid #2b3040;
+            border-radius: 18px;
+            padding: 30px;
+            margin-top: 30px;
+        }
+
+        .contribution-card p {
+            color: #9299aa;
+        }
+
+        #load-contributor {
+            background: #8b7cf6;
+            color: white;
+            border: none;
+            padding: 14px 24px;
+            margin-top: 15px;
+        }
+
+        #contributor-student-id {
+            color: #8b7cf6;
+            font-weight: 700;
+        }
+
+        .back-link {
+            display: inline-block;
+            margin-top: 30px;
+            color: #8b7cf6;
+            text-decoration: none;
+        }
+    </style>
+</head>
+<body>
+
+    <main class="contribution-container">
+
+        <h1>Team Contribution</h1>
+
+        <p>
+            This page demonstrates collaboration
+            between students using GitHub.
+        </p>
+
+        <div class="contribution-card">
+
+            <h2>Project Contributor</h2>
+
+            <p>
+                Contributor Student ID:
+                <span id="contributor-student-id">
+                    Not loaded
+                </span>
+            </p>
+
+            <button id="load-contributor">
+                Show Contributor
+            </button>
+
+        </div>
+
+        <a href="index.html" class="back-link">
+            ← Back to Task Manager
+        </a>
+
+    </main>
+
+    <script>
+        document.getElementById("load-contributor")
+            .addEventListener("click", async () => {
+                const output = document.getElementById(
+                    "contributor-student-id"
+                );
+
+                try {
+                    const response = await fetch("contribution.json");
+
+                    if (!response.ok) {
+                        throw new Error("Failed to load contributor");
+                    }
+
+                    const data = await response.json();
+
+                    output.textContent = data.contributorStudentId;
+
+                } catch (error) {
+                    output.textContent = "Error loading contributor";
+                }
+            });
+    </script>
+
+</body>
+</html>
