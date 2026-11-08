@@ -1,0 +1,82 @@
+
+* {
+    box-sizing: border-box;
+}
+
+body {
+    font-family: Arial, sans-serif;
+    background-color: #f4f4f4;
+    margin: 0;
+    padding: 30px;
+    color: #333;
+}
+
+h1 {
+    text-align: center;
+    color: #222;
+}
+
+#student-id {
+    font-weight: bold;
+}
+
+#task-form {
+    max-width: 600px;
+    margin: 25px auto;
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+
+input, textarea {
+    padding: 12px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    font-size: 16px;
+}
+
+button {
+    padding: 10px 15px;
+    border: none;
+    border-radius: 5px;
+    background-color: #2563eb;
+    color: white;
+    cursor: pointer;
+    margin: 4px;
+}
+
+button:hover {
+    background-color: #1d4ed8;
+}
+
+#task-list {
+    max-width: 600px;
+    margin: 20px auto;
+}
+
+.task-item {
+    background-color: white;
+    padding: 15px;
+    margin-bottom: 15px;
+    border-radius: 8px;
+    box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+}
+
+.task-title {
+    margin-top: 0;
+}
+
+.task-status {
+    font-weight: bold;
+}
+
+#status-message {
+    text-align: center;
+    color: #dc2626;
+}
+
+#contribution-link {
+    display: block;
+    text-align: center;
+    margin: 25px;
+}
